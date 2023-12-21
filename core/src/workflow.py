@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 -------------------------------------------------
-   File Name：     aug_parser
-   Description :
+   File Name：     workflow.py
+   Description :  execute the job with command line
    Author :       guxu
    date：          12/18/23
 -------------------------------------------------
@@ -11,6 +11,15 @@
 -------------------------------------------------
 """
 import argparse
+
+def workflow(args):
+    pass
+    # 1. extract .srt file
+
+    # 2. translate .srt file (optional)
+
+    # 3. convert (optional) and concatenate video with caption
+
 
 parser = argparse.ArgumentParser(prog="MovieINTPN", description="Movie Caption")
 
