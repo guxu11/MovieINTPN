@@ -29,6 +29,8 @@ class CaptionExtractor():
         if dst_path == 'na':
             dst_path = _gen_default_extract_dst_path(src_path)
         cmd = "autosub -S {} -D {} {} -o {}".format(src_lang, src_lang, src_path, dst_path)
+        print("Start extracting caption...")
+        print("Extraction command: {}".format(cmd))
         ret_code = CommandLineExec.exec_sync(cmd)
         if ret_code == 0:
             return dst_path

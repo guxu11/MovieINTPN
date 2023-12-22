@@ -39,6 +39,7 @@ class CaptionTranslator():
         if os.path.exists(dst_path):
             os.remove(dst_path)
         try:
+            print("Start translating caption file from {} to {}".format(src_lang, dst_lang))
             with open(src_path, 'r') as r:
                 with open(dst_path, 'w') as w:
                     line_no = 0
@@ -52,6 +53,7 @@ class CaptionTranslator():
                         w.write(line)
                         line = r.readline()
                         line_no += 1
+            return dst_path
         except Exception as e:
             print(e)
 
