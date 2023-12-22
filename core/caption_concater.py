@@ -12,8 +12,8 @@
 """
 import os.path
 
-from core.src.utils import _gen_default_concat_dst_path, _gen_default_convert_type_dst_path, _get_video_type
-from core.src.cmd_executor import CommandLineExec, ReturnCode
+from core.utils import _gen_default_concat_dst_path, _gen_default_convert_type_dst_path, _get_video_type
+from core.cmd_executor import CommandLineExec, ReturnCode
 
 
 class CaptionConcater:

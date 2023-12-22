@@ -12,7 +12,7 @@
 """
 import os
 
-from core.src.cmd_executor import CommandLineExec
+from core.cmd_executor import CommandLineExec
 
 def test_cmd_sync_non_param():
     cmd = "ls -a"

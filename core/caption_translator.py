@@ -13,8 +13,7 @@
 import os.path
 import time
 
-from core.src.constants import *
-from core.src.utils import _gen_default_trans_dst_path
+from core.utils import _gen_default_trans_dst_path
 import requests
 
 
@@ -70,7 +69,4 @@ class CaptionTranslator():
 
 
 if __name__ == '__main__':
-    c = CaptionTranslator()
-    # resp = c.translate("us", "zh-CN", "are you ok")
-    c.translate_subtitle_file("us", "zh-CN", "/Users/guxu/Movies/playground/normal_playground/demo.srt", keep_src=True)
-    # print(resp)
+    print(requests.__version__)

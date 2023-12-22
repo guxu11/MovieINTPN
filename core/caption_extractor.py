@@ -10,9 +10,8 @@
                    12/19/23:
 -------------------------------------------------
 """
-from core.src.constants import *
-from core.src.cmd_executor import CommandLineExec
-from core.src.utils import _gen_default_extract_dst_path
+from core.cmd_executor import CommandLineExec
+from core.utils import _gen_default_extract_dst_path
 
 """
 extractor subtitles using autosub command-line tool, which is not in high accuracy.
