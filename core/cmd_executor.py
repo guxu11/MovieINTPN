@@ -38,3 +38,5 @@ class CommandLineExec():
             print("Error:\n", e)
 
         return return_code
+if __name__ == '__main__':
+    CommandLineExec.exec_sync("ls")

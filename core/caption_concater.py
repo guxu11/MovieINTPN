@@ -12,7 +12,7 @@
 """
 import os.path
 
-from core.utils import _gen_default_concat_dst_path, _gen_default_convert_type_dst_path, _get_video_type
+from core.utils import _gen_default_concat_dst_path, _gen_default_convert_type_dst_path, _get_video_type, _reformat_name_with_space
 from core.cmd_executor import CommandLineExec, ReturnCode
 
 
@@ -21,6 +21,7 @@ class CaptionConcater:
         self.unsupported_type = {'ts', 'webm'}
 
     def ffmpeg_concat(self, video_path, caption_path, lang, output_path="na"):
+        video_path = _reformat_name_with_space(video_path)
         if output_path == "na":
             output_path = _gen_default_concat_dst_path(video_path, lang)
         src_type = _get_video_type(video_path)
