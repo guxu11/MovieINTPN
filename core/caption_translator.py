@@ -13,7 +13,8 @@
 import os.path
 import time
 
-from core.utils import _gen_default_trans_dst_path
+from core.utils import _gen_default_trans_dst_path, _reformat_name_with_space, _deformat_name_with_space
+from core.constants import HEADER
 import requests
 
 
@@ -33,6 +34,7 @@ class CaptionTranslator():
         return self._parse_resp(resp)
 
     def translate_subtitle_file(self, src_lang, dst_lang, src_path, dst_path="na", keep_src=False):
+        src_path = _deformat_name_with_space(src_path)
         if dst_path == "na":
             dst_path = _gen_default_trans_dst_path(src_path, src_lang, dst_lang)
         if os.path.exists(dst_path):
@@ -52,9 +54,9 @@ class CaptionTranslator():
                         w.write(line)
                         line = r.readline()
                         line_no += 1
-            return dst_path
+            return _reformat_name_with_space(dst_path)
         except Exception as e:
-            print(e)
+            print("translate error: ", e)
 
     def _parse_resp(self, resp):
         result = ''
@@ -69,4 +71,5 @@ class CaptionTranslator():
 
 
 if __name__ == '__main__':
-    print(requests.__version__)
+    c = CaptionTranslator()
+    c.translate_subtitle_file()
