@@ -20,7 +20,7 @@ pip install autosub
 4. install [ffmpeg](https://www.ffmpeg.org/download.html)
 5. build `movieINTPN` with source code
 ```shell
-python setup.py
+python setup.py install
 ```
 After installing
 ```shell
